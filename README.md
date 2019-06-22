@@ -1,7 +1,7 @@
 # Dracula for [Windows Terminal](https://github.com/microsoft/terminal)
 A port of the Dracula theme to Windows Terminal.
 
-![Screenshot](https://draculatheme.com/thismat/windows-terminal-dracula-theme/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/thismat/windows-terminal-dracula-theme/master/screenshot.png)
 
 
 ## Install
