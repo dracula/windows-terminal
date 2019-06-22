@@ -6,7 +6,7 @@ A port of the Dracula theme to Windows Terminal.
 
 In the `profile.json` settings file for Windows Terminal, find the `schemes` section and add the the following to the list:
 
-```json
+```
 {
     "background" : "#282A36",
     "black" : "#21222C",
@@ -32,7 +32,7 @@ In the `profile.json` settings file for Windows Terminal, find the `schemes` sec
 
 Example: 
 
-```json
+```
     "schemes" : 
     [
         {
@@ -66,9 +66,9 @@ Example:
 
 This theme is maintained by the following person.
 
-[![Matt Joiner](https://avatars0.githubusercontent.com/u/95755?s=60&v=4)](https://github.com/thismat)
----
-[Matt Joiner](https://github.com/thismat)
+[![Matt Joiner](https://avatars0.githubusercontent.com/u/95755?s=60&v=4)](https://github.com/thismat) |
+--- |
+[Matt Joiner](https://github.com/thismat) |
 
 ## License
 
