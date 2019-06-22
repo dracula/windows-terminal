@@ -1,5 +1,5 @@
 # Dracula for [Windows Terminal](https://github.com/microsoft/terminal)
-A port of the Dracula theme to Windows Terminal.
+A dark theme for [Windows Terminal](https://github.com/microsoft/terminal).
 
 ![Screenshot](https://raw.githubusercontent.com/thismat/windows-terminal-dracula-theme/master/screenshot.png)
 
