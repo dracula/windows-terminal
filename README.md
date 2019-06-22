@@ -64,7 +64,7 @@ Example:
 
 ## Team
 
-This theme is maintained by the following person.
+This theme is maintained by the following person(s) and a bunch of [awesome contributors](https://github.com/dracula/template/graphs/contributors).
 
 [![Matt Joiner](https://avatars0.githubusercontent.com/u/95755?s=60&v=4)](https://github.com/thismat) |
 --- |
