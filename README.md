@@ -65,6 +65,8 @@ Example:
 ```
 
 ##Results
+```
+    [
 {
     "globals" : 
     {
@@ -438,6 +440,8 @@ Example:
         }
     ]
 }
+    ]
+```
 ## Team
 
 This theme is maintained by the following person(s) and a bunch of [awesome contributors](https://github.com/dracula/template/graphs/contributors).
