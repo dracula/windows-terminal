@@ -64,7 +64,8 @@ Example:
     ]
 ```
 
-##Results
+## Result Configuration File
+
 ```
     [
 {
