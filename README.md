@@ -67,7 +67,9 @@ Example:
 ## Result Configuration File With Enabled Profile
 
 ```json
-##### H5 (Rest of above configs)......
+        {
+            ...
+        }
     "profiles" : 
     [
         {
@@ -131,7 +133,9 @@ Example:
             "white" : "#F8F8F2",
             "yellow" : "#F1FA8C"
         },
-##### H5 (Rest of below configs)......
+        {
+            ...
+        }
 ```
 ## Team
 
