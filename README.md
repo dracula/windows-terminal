@@ -8,7 +8,7 @@ A dark theme for [Windows Terminal](https://github.com/microsoft/terminal).
 
 In the `profile.json` settings file for Windows Terminal, find the `schemes` section and add the the following to the list:
 
-```
+```json
 {
     "background" : "#282A36",
     "black" : "#21222C",
@@ -34,7 +34,7 @@ In the `profile.json` settings file for Windows Terminal, find the `schemes` sec
 
 Example: 
 
-```
+```json
     "schemes" : 
     [
         {
@@ -64,10 +64,10 @@ Example:
     ]
 ```
 
-## Result Configuration File
+## Result Configuration File With Enabled Profile
 
-```
-    .....(Rest of above configs)......
+```json
+##### H5 (Rest of above configs)......
     "profiles" : 
     [
         {
@@ -131,7 +131,7 @@ Example:
             "white" : "#F8F8F2",
             "yellow" : "#F1FA8C"
         },
-        .....(Rest of below configs)......
+##### H5 (Rest of below configs)......
 ```
 ## Team
 
