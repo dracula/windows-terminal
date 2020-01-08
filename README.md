@@ -74,7 +74,6 @@ Example:
     [
         {
             "acrylicOpacity" : 0.5,
-            "background" : "#282A36",
             "closeOnExit" : true,
             "colorScheme" : "Dracula",
             "commandline" : "powershell.exe",
