@@ -1,4 +1,5 @@
 {
+    "name" : "Dracula",
     "background" : "#282A36",
     "black" : "#21222C",
     "blue" : "#BD93F9",
@@ -13,7 +14,6 @@
     "cyan" : "#8BE9FD",
     "foreground" : "#F8F8F2",
     "green" : "#50FA7B",
-    "name" : "Dracula",
     "purple" : "#FF79C6",
     "red" : "#FF5555",
     "white" : "#F8F8F2",
