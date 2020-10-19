@@ -53,3 +53,24 @@ Example:
     }
 }
 ```
+
+If the profiles are listed as below:
+
+```json
+"profiles": [
+    // list of profiles
+]
+```
+
+Change it to:
+
+```json
+"profiles": {
+    "defaults": {
+      "colorScheme": "Dracula"
+    },
+    "list": [
+      // list of profiles
+    ]
+  },
+```
