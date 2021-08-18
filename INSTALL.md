@@ -53,3 +53,24 @@ Example:
     }
 }
 ```
+
+If the profiles are listed as below:
+
+```jsonc
+"profiles": [
+    // list of profiles
+]
+```
+
+Change it to:
+
+```jsonc
+"profiles": {
+    "defaults": {
+      "colorScheme": "Dracula"
+    },
+    "list": [
+      // list of profiles
+    ]
+  },
+```
