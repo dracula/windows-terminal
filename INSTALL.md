@@ -56,7 +56,7 @@ Example:
 
 If the profiles are listed as below:
 
-```json
+```jsonc
 "profiles": [
     // list of profiles
 ]
