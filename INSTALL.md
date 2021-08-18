@@ -64,7 +64,7 @@ If the profiles are listed as below:
 
 Change it to:
 
-```json
+```jsonc
 "profiles": {
     "defaults": {
       "colorScheme": "Dracula"
