@@ -2,7 +2,7 @@
 
 #### Download
 
-Download using the [GitHub .zip download](https://github.com/dracula/windows-terminal/archive/master.zip) option.
+Download using the [GitHub `.zip` download](https://github.com/dracula/windows-terminal/archive/master.zip) option.
 
 #### Install
 
