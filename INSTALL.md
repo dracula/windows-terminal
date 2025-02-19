@@ -119,11 +119,7 @@ function Update-Terminal {
     if (-not $settings.profiles.defaults) {
         $settings.profiles | Add-Member -Type NoteProperty -Name "defaults" -Value @{}
     }
-
-    # Set the default font face
-    $settings.profiles.defaults.font.face = "MesloLGM Nerd Font Mono"
-    Write-Host "Set default font to MesloLGM Nerd Font Mono"
-    
+   
     # Set Dracula as the default color scheme
     $settings.profiles.defaults.colorScheme = "Dracula"
     Write-Host "Set Dracula as default color scheme"
