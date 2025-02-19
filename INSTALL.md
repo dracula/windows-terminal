@@ -78,3 +78,60 @@ Change it to:
     ]
   },
 ```
+
+#### Download, Install and Activate with PowerShell
+Open PowerShell and run the following command
+```
+# Function to customize Terminal with Dracula theme and font
+function Update-Terminal {
+    # Get the settings.json path
+    $settingsPath = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+
+    # Read the current settings
+    $settings = Get-Content -Path $settingsPath -Raw | ConvertFrom-Json
+
+    # Download and parse the Dracula color scheme
+    try {
+        $draculaScheme = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/dracula/windows-terminal/refs/heads/master/dracula.json"
+        Write-Host "Successfully downloaded Dracula color scheme"
+    } catch {
+        Write-Error "Failed to download Dracula color scheme: $_"
+        exit 1
+    }
+
+    # Check if schemes property exists, if not create it
+    if (-not $settings.schemes) {
+        $settings | Add-Member -Type NoteProperty -Name "schemes" -Value @()
+    }
+
+    # Check if Dracula scheme already exists
+    $draculaExists = $settings.schemes | Where-Object { $_.name -eq "Dracula" }
+
+    if (-not $draculaExists) {
+        # Add Dracula scheme
+        $settings.schemes += $draculaScheme
+        Write-Host "Added Dracula color scheme"
+    } else {
+        Write-Host "Dracula color scheme already exists"
+    }
+
+    # Check if profiles.defaults exists, if not create it
+    if (-not $settings.profiles.defaults) {
+        $settings.profiles | Add-Member -Type NoteProperty -Name "defaults" -Value @{}
+    }
+
+    # Set the default font face
+    $settings.profiles.defaults.font.face = "MesloLGM Nerd Font Mono"
+    Write-Host "Set default font to MesloLGM Nerd Font Mono"
+    
+    # Set Dracula as the default color scheme
+    $settings.profiles.defaults.colorScheme = "Dracula"
+    Write-Host "Set Dracula as default color scheme"
+
+    # Convert back to JSON and save
+    $settings | ConvertTo-Json -Depth 32 | Set-Content -Path $settingsPath
+
+    Write-Host "Settings have been updated successfully"
+}
+Update-Terminal
+```
