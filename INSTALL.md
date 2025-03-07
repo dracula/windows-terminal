@@ -5,6 +5,20 @@
 Download using the [GitHub `.zip` download](https://github.com/dracula/windows-terminal/archive/master.zip) option.
 
 #### Install
+##### Easy Install
+Run the `Add-TerminalProfileDracula.ps1` PowerShell script to install the colorscheme via [Windows Terminal JSON Fragments](https://docs.microsoft.com/en-us/windows/terminal/json-fragment-extensions#where-to-place-the-json-fragment-files)
+
+> **Note**  
+> To allow the execution of the installation script without having to relax the [Execution Policy][ps-execpolicy] of the entire system, you can unblock the `Add-TerminalProfileDracula.ps1` file using the [Unblock-File][ps-unblockfile] PowerShell cmdlet.
+>
+> ```powershell
+> Unblock-File .\Add-TerminalProfileDracula.ps1
+> ```
+
+[ps-execpolicy]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.2
+[ps-unblockfile]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/unblock-file?view=powershell-7.2
+
+##### Manual Install
 
 Start Windows Terminal and click on the down arrow symbol `˅` from menu bar. This will open a drop down menu from which select Settings option. Alternatively use `Ctrl + ,` to open Settings directly.
 
@@ -44,7 +58,7 @@ Example:
 ]
 ```
 
-#### Activate
+##### Activate
 
 Once the color scheme has been defined, it's time to enable it. Find the `profiles` section and add a `colorScheme` value to the default profile.
 
@@ -77,57 +91,4 @@ Change it to:
       // list of profiles
     ]
   },
-```
-
-#### Download, Install and Activate with PowerShell
-Open PowerShell and run the following command
-```
-# Function to customize Terminal with Dracula theme and font
-function Update-Terminal {
-    # Get the settings.json path
-    $settingsPath = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
-
-    # Read the current settings
-    $settings = Get-Content -Path $settingsPath -Raw | ConvertFrom-Json
-
-    # Download and parse the Dracula color scheme
-    try {
-        $draculaScheme = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/dracula/windows-terminal/refs/heads/master/dracula.json"
-        Write-Host "Successfully downloaded Dracula color scheme"
-    } catch {
-        Write-Error "Failed to download Dracula color scheme: $_"
-        exit 1
-    }
-
-    # Check if schemes property exists, if not create it
-    if (-not $settings.schemes) {
-        $settings | Add-Member -Type NoteProperty -Name "schemes" -Value @()
-    }
-
-    # Check if Dracula scheme already exists
-    $draculaExists = $settings.schemes | Where-Object { $_.name -eq "Dracula" }
-
-    if (-not $draculaExists) {
-        # Add Dracula scheme
-        $settings.schemes += $draculaScheme
-        Write-Host "Added Dracula color scheme"
-    } else {
-        Write-Host "Dracula color scheme already exists"
-    }
-
-    # Check if profiles.defaults exists, if not create it
-    if (-not $settings.profiles.defaults) {
-        $settings.profiles | Add-Member -Type NoteProperty -Name "defaults" -Value @{}
-    }
-   
-    # Set Dracula as the default color scheme
-    $settings.profiles.defaults.colorScheme = "Dracula"
-    Write-Host "Set Dracula as default color scheme"
-
-    # Convert back to JSON and save
-    $settings | ConvertTo-Json -Depth 32 | Set-Content -Path $settingsPath
-
-    Write-Host "Settings have been updated successfully"
-}
-Update-Terminal
 ```
