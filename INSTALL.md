@@ -5,6 +5,20 @@
 Download using the [GitHub `.zip` download](https://github.com/dracula/windows-terminal/archive/master.zip) option.
 
 #### Install
+##### Easy Install
+Run the `Add-TerminalProfileDracula.ps1` PowerShell script to install the colorscheme via [Windows Terminal JSON Fragments](https://docs.microsoft.com/en-us/windows/terminal/json-fragment-extensions#where-to-place-the-json-fragment-files)
+
+> **Note**  
+> To allow the execution of the installation script without having to relax the [Execution Policy][ps-execpolicy] of the entire system, you can unblock the `Add-TerminalProfileDracula.ps1` file using the [Unblock-File][ps-unblockfile] PowerShell cmdlet.
+>
+> ```powershell
+> Unblock-File .\Add-TerminalProfileDracula.ps1
+> ```
+
+[ps-execpolicy]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.2
+[ps-unblockfile]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/unblock-file?view=powershell-7.2
+
+##### Manual Install
 
 Start Windows Terminal and click on the down arrow symbol `˅` from menu bar. This will open a drop down menu from which select Settings option. Alternatively use `Ctrl + ,` to open Settings directly.
 
@@ -44,7 +58,7 @@ Example:
 ]
 ```
 
-#### Activate
+##### Activate
 
 Once the color scheme has been defined, it's time to enable it. Find the `profiles` section and add a `colorScheme` value to the default profile.
 
